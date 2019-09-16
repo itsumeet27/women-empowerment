@@ -19,7 +19,7 @@
                                 <tbody>
                                     <tr>
                                         <th>About the course:</th>
-                                        <td>Kisan Mitras would be trained resource persons who work with farmers to help
+                                        <td class="text-justify">Kisan Mitras would be trained resource persons who work with farmers to help
                                             them shift towards agro-ecological approaches to sustain their farming,
                                             organise themselves into producer cooperatives, understand the issues in
                                             public policy and improve the support systems. They will undergo a
@@ -30,7 +30,7 @@
                                     </tr>
                                     <tr>
                                         <th>Qualification: </th>
-                                        <td>
+                                        <td class="text-justify">
                                             Minimal literacy to read and write and communicate in Hindi/English and
                                             experience in working farmers is essentialWe request the organisations to
                                             support the fellows attending this
@@ -40,7 +40,7 @@
                                     </tr>
                                     <tr>
                                         <th>Medium of instruction: </th>
-                                        <td>
+                                        <td class="text-justify">
                                             Hindi/English
                                             (Telugu Course would be offered in March, 2019 so people who want to
                                             attend from AP and Telangana need not apply now.
@@ -72,7 +72,7 @@
                                 <tbody>
                                     <tr>
                                         <th>About the course:</th>
-                                        <td>The trainees will be selected from the poor and destitute women of the
+                                        <td class="text-justify">The trainees will be selected from the poor and destitute women of the
                                             society belonging low income group preferably below 40 years of age having
                                             primary knowledge of reading and writing. The trainees will get the stipend
                                             of Rs. 200/- per month. The duration of training is for one year. maximum
@@ -81,7 +81,7 @@
                                     </tr>
                                     <tr>
                                         <th>Objective: </th>
-                                        <td>
+                                        <td class="text-justify">
                                             The main object of the scheme is to rehabilitate the poor and destitute
                                             girls and women of the society both economically and socially through the
                                             training in cutting and tailoring and knitting.
@@ -89,7 +89,7 @@
                                     </tr>
                                     <tr>
                                         <th>Medium of instruction: </th>
-                                        <td>
+                                        <td class="text-justify">
                                             Hindi/English
                                         </td>
                                     </tr>
