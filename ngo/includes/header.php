@@ -18,5 +18,44 @@
 
 <body>
   <header>
-    
+    <!--Navbar -->
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+      <a class="navbar-brand" href="#">NGO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+        aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="criteria.php">Criteria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="organizations.php">Organizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="funding.php">Funding & Norms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registration.php">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Login</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect waves-light">
+              <i class="fab fa-google-plus-g"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--/.Navbar -->
   </header>
