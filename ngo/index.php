@@ -1,4 +1,4 @@
-
+<?php include 'includes/header.php';?>
 
   <!-- Start your project here-->
   <div style="height: 100vh">
@@ -14,4 +14,4 @@
   </div>
   <!-- Start your project here-->
 
-  
+<?php include 'includes/footer.php';?>  
