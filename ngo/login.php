@@ -38,7 +38,7 @@
 				$email = $_POST['email'];
 				$password = $_POST['password'];
 
-				$sql = "SELECT * FROM step WHERE password = '$password' AND email = '$email'";
+				$sql = "SELECT * FROM ngo WHERE password = '$password' AND email = '$email'";
 				$runSql = $db->query($sql);
 				$check_user = mysqli_num_rows($runSql);
 				if($check_user == 0){

@@ -18,19 +18,17 @@
     $result = $db->query($sql);
     while ($row_pro = mysqli_fetch_array($result)) {
           $id = $row_pro['id'];
-          $firstname = $row_pro['firstname'];
-          $lastname = $row_pro['lastname'];
+          $ngo_name = $row_pro['ngo_name'];
+          $ngo_description = $row_pro['ngo_description'];
           $email = $row_pro['email'];
-          $dateOfBirth = $row_pro['dateOfBirth'];
-          $address = $row_pro['address'];
+          $ngo_head = $row_pro['ngo_head'];
+          $ngo_address = $row_pro['ngo_address'];
           $city = $row_pro['city'];
           $state = $row_pro['state'];
           $zipcode = $row_pro['zipcode'];
           $phone = $row_pro['phone'];
-          $noOfMembers = $row_pro['noOfMembers'];
-          $noOfChildren = $row_pro['noOfChildren'];
-          $income = $row_pro['income'];
-          $dateOfRegistration = $row_pro['dateOfRegistration'];
+          $organization_type = $row_pro['organization_type'];
+
     }
 ?>
 
@@ -39,7 +37,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>User Dashboard</title>
+  <title>NGO Dashboard</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -52,7 +50,7 @@
 <body>
 
 <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-  <a class="navbar-brand" href="index.php"><?=$firstname;?> <?=$lastname;?></a>
+  <a class="navbar-brand" href="index.php"><?=$ngo_name;?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -60,7 +58,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="myaccount.php?add_details">Add Details</a>
+        <a class="nav-link" href="myaccount.php?add_courses">Add Courses</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="myaccount.php?edit_account">Edit Account</a>
@@ -81,21 +79,21 @@
 </nav>
 
   <?php 
-    if(!isset($_GET['add_details'])) {
+    if(!isset($_GET['add_courses'])) {
       if (!isset($_GET['edit_account'])) {
         if(!isset($_GET['change_password'])){
           if(!isset($_GET['delete_account'])){
             echo 
             "<div class='card'>
                 <div class='card-header'>
-                  <h3 class='h3-responsive p-2'>Hello $firstname</h3>
+                  <h3 class='h3-responsive p-2'>Hello $ngo_name</h3>
                 </div>
                 <div class='card-body table-responsive'>
                   <table class='table table-striped table-condensed' style='display: table'>
                     
                     <tr>
                       <th><b>Full Name: </b></th>
-                      <td>$firstname $lastname</td>
+                      <td>$ngo_name</td>
                     </tr>
                     <tr>
                       <th><b>Email </b></th>
@@ -107,7 +105,7 @@
                     </tr>
                     <tr>
                       <th><b>Address: </b></th>
-                      <td>$address</td>
+                      <td>$ngo_address</td>
                     </tr>
                     <tr>
                       <th><b>City: </b></th>
@@ -131,7 +129,7 @@
     }
   ?>
   <?php
-    if(isset($_GET['add_details'])){
+    if(isset($_GET['add_courses'])){
       include 'details/add_details.php';
     }
     if(isset($_GET['edit_account'])){
