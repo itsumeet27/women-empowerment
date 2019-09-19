@@ -28,7 +28,7 @@
 	$email = $_SESSION['email'];
 	if(isset($_POST['yes'])){
 		$ip = getIp();
-		$delete_employer = "DELETE FROM step WHERE email = '$email'";
+		$delete_employer = "DELETE FROM ngo WHERE email = '$email'";
 		$run_delete = $db->query($delete_employer);
 		echo "<script>alert('Your account has been deleted successfully!')</script>";
 		echo "<script>window.open('index.php', '_self')</script>";
