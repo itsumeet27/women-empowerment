@@ -130,7 +130,7 @@
   ?>
   <?php
     if(isset($_GET['add_courses'])){
-      include 'details/add_details.php';
+      include 'details/add_courses.php';
     }
     if(isset($_GET['edit_account'])){
       include 'details/edit_account.php';

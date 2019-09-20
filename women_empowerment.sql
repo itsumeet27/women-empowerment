@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2019 at 11:11 PM
+-- Generation Time: Sep 20, 2019 at 09:56 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -32,12 +32,22 @@ CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `ngo_id` int(11) NOT NULL,
   `course_name` varchar(100) NOT NULL,
+  `course_category` varchar(100) NOT NULL,
   `course_description` text NOT NULL,
   `course_duration` int(100) NOT NULL,
   `course_objective` text NOT NULL,
   `course_medium` text NOT NULL,
+  `featured` tinyint(4) NOT NULL DEFAULT '0',
+  `deleted` tinyint(4) NOT NULL DEFAULT '0',
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `ngo_id`, `course_name`, `course_category`, `course_description`, `course_duration`, `course_objective`, `course_medium`, `featured`, `deleted`, `date`) VALUES
+(1, 1, 'Natural Resources', 'Agriculture', 'A natural resources course covers topics pertaining to forestry, soils, and wildlife. Students learn about power sources, such as electric motors and combustion engines, as well as government regulations and programs that relate to natural resource conservation. Natural resource courses also address the effects that current power sources have on the agriculture industry and what it means for the future of natural resources and power.', 3, 'Kisan Mitras would be trained resource persons who work with farmers to help them shift towards agro-ecological approaches to sustain their farming, organize themselves into producer cooperatives, understand the issues in public policy and improve the support systems. They will undergo a foundation course and can specialize in any of the areas of ecological farming, farmers&rsquo; institutions and marketing or public policy support.', 'English, Hindi', 0, 0, '2019-09-20 12:03:30');
 
 -- --------------------------------------------------------
 
@@ -54,9 +64,20 @@ CREATE TABLE `ngo` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `phone` text NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `zipcode` int(100) NOT NULL,
   `ngo_head` varchar(100) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ngo`
+--
+
+INSERT INTO `ngo` (`id`, `ngo_name`, `ngo_description`, `ngo_address`, `organization_type`, `email`, `password`, `phone`, `city`, `state`, `zipcode`, `ngo_head`, `date`, `ip`) VALUES
+(1, 'First NGO', 'First description of NGO', '403, B-9, Sector-6, Shanti Nagar, Mira Road East', 'Self-funded', 'sksksharma0@gmail.com', 'Shar8286', '8286864601', 'Mumbai', 'Maharashtra', 401107, 'Sumeet Sharma', '2019-09-20 09:18:42', '::1');
 
 -- --------------------------------------------------------
 
@@ -150,13 +171,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ngo`
 --
 ALTER TABLE `ngo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `step`
