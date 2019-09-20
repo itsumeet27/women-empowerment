@@ -34,11 +34,8 @@
             <a class="nav-link" href="guidelines.php">Guidelines</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="courses.php">Courses</a>
-          </li>
-          <!-- <li class="nav-item">
             <a class="nav-link" href="training.php">Training Sector</a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="ngo.php">NGO(s)</a>
           </li>

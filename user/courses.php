@@ -4,7 +4,7 @@
 ?>
 
 <?php 
-    $selCourses = "SELECT * FROM courses WHERE deleted = 0";
+    $selCourses = "SELECT c.course_name, c.course_description, c.course_duration, c.course_objective, c.course_category, n.ngo_name FROM courses c INNER JOIN ngo n ON c.ngo_id = n.id";
     $resultCourses = $db->query($selCourses);
 ?>
 
@@ -12,7 +12,7 @@
     <h2 class="text-center p-3">Courses provided by NGO(s)</h2>
     <div class="row">
         <?php while($courses = mysqli_fetch_array($resultCourses)): ?>
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">
@@ -23,11 +23,11 @@
                     <table class="table table-bordered">
                         <tr>
                             <th>Course Description</th>
-                            <td><?=nl2br($courses['course_description']);?></td>
+                            <td class="text-justify"><?=nl2br($courses['course_description']);?></td>
                         </tr>
                         <tr>
                             <th>Course Objective</th>
-                            <td><?=nl2br($courses['course_objective']);?></td>
+                            <td class="text-justify"><?=nl2br($courses['course_objective']);?></td>
                         </tr>
                         <tr>
                             <th>Course Duration</th>
@@ -40,7 +40,12 @@
                     </table>
                 </div>
                 <div class="card-footer">
-                    <a href="courses.php?apply=<?=$courses['id'];?>" id="apply" name="apply" class="btn btn-default btn-md">Apply Now</a>
+                    <div class="float-left">
+                        <label>Provided by: </label> <?=$courses['ngo_name'];?>
+                    </div>
+                    <div class="float-right">
+                        <a href="courses.php?apply=<?=$courses['id'];?>" id="apply" name="apply" class="btn btn-default btn-md">Apply Now</a>
+                    </div>                    
                 </div>
             </div>
             <br>
