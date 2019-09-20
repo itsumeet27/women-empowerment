@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	include 'includes/header.php';
-	include '../core/init.php';
+	
 ?>
 <div class="container p-3">
 	<div class="card">
