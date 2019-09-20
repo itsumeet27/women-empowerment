@@ -39,12 +39,15 @@
           <li class="nav-item">
             <a class="nav-link" href="funding.php">Funding & Norms</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="registration.php">Register</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
-          </li>
+          <?php 
+            if(!isset($_SESSION['email'])){
+              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+            }
+            else{
+              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+              echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+            }
+          ?>
         </ul>
         <ul class="navbar-nav ml-auto nav-flex-icons">
           <li class="nav-item">
