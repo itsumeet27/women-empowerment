@@ -77,52 +77,53 @@
     </ul>
   </div>
 </nav>
+  <?php
+    $selCourses = "SELECT * FROM courses WHERE ngo_id = '$id' AND deleted = 0";
+    $resultCourses = $db->query($selCourses);
+  ?>
 
   <?php 
     if(!isset($_GET['add_courses'])) {
       if (!isset($_GET['edit_account'])) {
         if(!isset($_GET['change_password'])){
           if(!isset($_GET['delete_account'])){
-            echo 
-            "<div class='card'>
-                <div class='card-header'>
-                  <h3 class='h3-responsive p-2'>Hello $ngo_name</h3>
-                </div>
-                <div class='card-body table-responsive'>
-                  <table class='table table-striped table-condensed' style='display: table'>
-                    
-                    <tr>
-                      <th><b>Full Name: </b></th>
-                      <td>$ngo_name</td>
-                    </tr>
-                    <tr>
-                      <th><b>Email </b></th>
-                      <td>$email</td>
-                    </tr>
-                    <tr>
-                      <th><b>Phone: </b></th>
-                      <td>$phone</td>
-                    </tr>
-                    <tr>
-                      <th><b>Address: </b></th>
-                      <td>$ngo_address</td>
-                    </tr>
-                    <tr>
-                      <th><b>City: </b></th>
-                      <td>$city</td>
-                    </tr>
-                    <tr>
-                      <th><b>State: </b></th>
-                      <td>$state</td>
-                    </tr>
-                    <tr>
-                      <th><b>Zipcode: </b></th>
-                      <td>$zipcode</td>
-                    </tr>
+            ?>
+              <div class='container-fluid'>
+                <h3 class='h3-responsive text-center p-3'>List of Courses added</h3>
+                <div class='table-responsive'>
+                  <table class='table table-bordered'>
+                    <thead>
+                      <th></th>
+                      <th><b>Course Name</b></th>
+                      <th><b>Course Description</b></th>
+                      <th><b>Course Category</b></th>
+                      <th><b>Course Duration</b></th>
+                      <th><b>Course Objective</b></th>
+                    </thead>
+                    <tbody>
+                  <?php
+                    while($courses = mysqli_fetch_array($resultCourses)){
+                      $course_id = $courses['id'];
+                      $course_name = $courses['course_name'];
+                      $course_description = $courses['course_description'];
+                      $course_duration = $courses['course_duration'];
+                      $course_category = $courses['course_category'];
+                      $course_objective = $courses['course_objective'];
+                  ?>
+                      <tr>
+                        <td><i class='fas fa-trash'></i></td>
+                        <td><?=$course_name;?></td>
+                        <td class="text-justify"><?=nl2br($course_description);?></td>
+                        <td><?=$course_category;?></td>
+                        <td><?=$course_duration;?> months</td>
+                        <td class="text-justify"><?=nl2br($course_objective);?></td>
+                      </tr>
+                    <?php } ?>
+                    </tbody>
                   </table>
                 </div>
               </div>
-            ";
+            <?php
           }
         }
       }
