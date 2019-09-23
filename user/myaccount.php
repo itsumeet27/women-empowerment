@@ -85,51 +85,87 @@
       if (!isset($_GET['edit_account'])) {
         if(!isset($_GET['change_password'])){
           if(!isset($_GET['delete_account'])){
-            echo 
-            "<div class='card'>
+            $sql = "SELECT s.firstname, s.lastname, s.email, s.phone, c.course_name, c.course_category, a.date FROM applications a INNER JOIN step s ON a.step_id = s.id INNER JOIN courses c ON a.course_id = c.id WHERE a.applied = 1 AND s.id = '$id'";
+            $result = $db->query($sql);
+
+            ?>
+            <div class='card'>
                 <div class='card-header'>
-                  <h3 class='h3-responsive p-2'>Hello $firstname</h3>
+                  <h3 class='h3-responsive p-2'>Hello <?=$firstname;?></h3>
                 </div>
+                <h2 class='text-center p-3'>List of courses applied</h2>
+                <div class="container-fluid">
+                  <table class="table table-bordered">
+                    <thead>
+                    <th><b>First Name</b></th>
+                    <th><b>Last Name</b></th>
+                    <th><b>Email</b></th>
+                    <th><b>Phone</b></th>
+                    <th><b>Course Name</b></th>
+                    <th><b>Course Category</b></th>
+                    <th><b>Date of Registration</b></th>
+                  </thead>
+                  <tbody>
+                    <?php while($applications = mysqli_fetch_array($result)): ?>
+                      <tr>
+                        <td><?=$applications['firstname'];?></td>
+                        <td><?=$applications['lastname'];?></td>
+                        <td><?=$applications['email'];?></td>
+                        <td><?=$applications['phone'];?></td>
+                        <td><?=$applications['course_name'];?></td>
+                        <td><?=$applications['course_category'];?></td>
+                        <td><?=$applications['date'];?></td>
+                      </tr>
+                    <?php endwhile; ?>
+                  </tbody>
+                  </table>
+                </div>
+
+                <h2 class='text-center p-3'>Profile Details</h2>
                 <div class='card-body table-responsive'>
                   <table class='table table-striped table-condensed' style='display: table'>
                     
                     <tr>
                       <th><b>Full Name: </b></th>
-                      <td>$firstname $lastname</td>
+                      <td><?=$firstname?> <?=$lastname;?></td>
                     </tr>
                     <tr>
                       <th><b>Email </b></th>
-                      <td>$email</td>
+                      <td><?=$email;?></td>
                     </tr>
                     <tr>
                       <th><b>Phone: </b></th>
-                      <td>$phone</td>
+                      <td><?=$phone;?></td>
                     </tr>
                     <tr>
                       <th><b>Address: </b></th>
-                      <td>$address</td>
+                      <td><?=$address;?></td>
                     </tr>
                     <tr>
                       <th><b>City: </b></th>
-                      <td>$city</td>
+                      <td><?=$city;?></td>
                     </tr>
                     <tr>
                       <th><b>State: </b></th>
-                      <td>$state</td>
+                      <td><?=$state;?></td>
                     </tr>
                     <tr>
                       <th><b>Zipcode: </b></th>
-                      <td>$zipcode</td>
+                      <td><?=$zipcode;?></td>
                     </tr>
                   </table>
                 </div>
               </div>
             ";
+            <?php
+            
           }
         }
       }
     }
   ?>
+
+  
   <?php
     if(isset($_GET['add_details'])){
       include 'details/add_details.php';
