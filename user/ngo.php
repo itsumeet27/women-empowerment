@@ -74,7 +74,7 @@
     $result = $db->query($sqlcus);
     while ($row_pro = mysqli_fetch_array($result)) {
         $step_id = $row_pro['id'];
-        $step_name = $row_pro['fullname'];
+        $step_firstname = $row_pro['firstname'];
         $step_email = $row_pro['email'];
         $step_address = $row_pro['address'];
         $step_city = $row_pro['city'];
