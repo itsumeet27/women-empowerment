@@ -1,7 +1,7 @@
 <?php include 'includes/header.php';?>
 
 <?php
-	$sql = "SELECT s.firstname, s.lastname, s.email, s.phone, c.course_name, c.course_category, a.date FROM applications a INNER JOIN step s ON a.step_id = s.id INNER JOIN courses c ON a.course_id = c.id WHERE a.applied = 1";
+	$sql = "SELECT s.firstname, s.lastname, s.email, s.phone, c.course_name, c.course_category, n.ngo_name, a.date FROM applications a INNER JOIN step s ON a.step_id = s.id INNER JOIN courses c ON a.course_id = c.id INNER JOIN ngo n ON a.ngo_id = n.id WHERE a.applied = 1";
 	$result = $db->query($sql);
 ?>
 
@@ -15,6 +15,7 @@
 			<th><b>Phone</b></th>
 			<th><b>Course Name</b></th>
 			<th><b>Course Category</b></th>
+			<th><b>Provided By</b></th>
 			<th><b>Date of Registration</b></th>
 		</thead>
 		<tbody>
@@ -26,6 +27,7 @@
 					<td><?=$applications['phone'];?></td>
 					<td><?=$applications['course_name'];?></td>
 					<td><?=$applications['course_category'];?></td>
+					<td><?=$applications['ngo_name'];?></td>
 					<td><?=$applications['date'];?></td>
 				</tr>
 			<?php endwhile; ?>

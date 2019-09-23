@@ -87,10 +87,12 @@
 <?php
     if(isset($_GET['apply'])){
         $id = sanitize((int)$_GET['apply']);
-        $sqlcourse = "SELECT * FROM courses WHERE deleted = 0 AND id = '$id'";
+        $sqlcourse = "SELECT n.id, n.ngo_name, c.course_name FROM courses c INNER JOIN ngo n ON c.ngo_id = n.id WHERE c.deleted = 0 AND c.id = '$id'";
         $courses = $db->query($sqlcourse);
         while ($course = mysqli_fetch_assoc($courses)) {
             $course_name = $course['course_name'];
+            $ngo_name = $course['ngo_name'];
+            $ngo_id = $course['id'];
         }
         $sql = "SELECT * FROM applications WHERE course_id = '$id'";
         $applications = $db->query($sql);
@@ -98,7 +100,7 @@
             $step_user_id = $application['step_id'];
             $course_user_id = $application['course_id'];
         }
-        $insertSql = "INSERT INTO applications (`step_id`,`course_id`,`applied`) VALUES ('$step_id','$id', 1)";
+        $insertSql = "INSERT INTO applications (`step_id`,`course_id`,`ngo_id`,`applied`) VALUES ('$step_id','$id','$ngo_id', 1)";
         $insert = $db->query($insertSql);
         if($insert){
         ?>
