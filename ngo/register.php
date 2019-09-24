@@ -19,7 +19,7 @@
 				              <label for="ngo_name">NGO Name</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
-				              <input type="text" id="ngo_description" class="form-control form-control-sm" name="ngo_description">
+				              <textarea id="ngo_description" class="form-control form-control-sm" name="ngo_description"></textarea>
 				              <label for="ngo_description">NGO Description</label>
 				            </div>
 				            <div class="md-form form-sm"> <i class="fa fa-envelope prefix"></i>
