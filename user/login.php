@@ -45,23 +45,16 @@
 					echo "<script>alert('Your password or email is incorrect, please try again!')</script>";
 					exit();
 				}
-				if($_SESSION['email'] = $email){
+				$ip = getIp();				
+				if($check_user > 0){
+					$_SESSION['email'] = $email;
+					echo "<script>alert('You logged in successfully!')</script>";
+					echo "<script>window.open('myaccount.php','_self')</script>";
+				}else{
+					$_SESSION['email'] = $email;
 					echo "<script>alert('You logged in successfully!')</script>";
 					echo "<script>window.open('myaccount.php','_self')</script>";
 				}
-				// $ip = getIp();
-				// $sel_cart = "SELECT * FROM cart WHERE ip_add = '$ip'";
-				// $run_cart = $db->query($sel_cart);
-				// $check_cart = mysqli_num_rows($run_cart);
-				// if($check_customer > 0 AND $check_cart == 0){
-				// 	$_SESSION['email'] = $email;
-				// 	echo "<script>alert('You logged in successfully!')</script>";
-				// 	echo "<script>window.open('myaccount.php','_self')</script>";
-				// }else{
-				// 	$_SESSION['email'] = $email;
-				// 	echo "<script>alert('You logged in successfully!')</script>";
-				// 	echo "<script>window.open('cart.php','_self')</script>";
-				// }
 			}
 		?>
 	</div>
