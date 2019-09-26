@@ -17,13 +17,30 @@
   <link href="css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
+
+  <style type="text/css">
+    .top-nav-collapse {
+      background-color: #36a1c8
+    }
+    @media (max-width: 768px) {
+      .navbar:not(.top-nav-collapse) {
+        background-color: #36a1c8
+      }
+    }
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background-color: #36a1c8
+      }
+    }
+
+  </style>
 </head>
 
 <body>
   <header>
     <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-      <a class="navbar-brand" href="#">MWCD</a>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar z-depth-0">
+      <a class="navbar-brand" href="index.php">MWCD</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
         aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -107,8 +124,7 @@
         <div class="container-fluid d-flex align-items-center justify-content-center h-100">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-md-10">
-              <h4 class="white-text my-4 h1-responsive">Ministry of Women and Child Development</h4>
-              <hr class="hr-light">
+              <h1 class="white-text my-4 h1-responsive" style="line-height: 1.5em;">Ministry of Women and Child Development</h1>
             </div>
           </div>
         </div>
