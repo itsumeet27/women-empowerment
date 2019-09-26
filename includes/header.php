@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+  session_start();
+  include 'core/init.php';
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,8 +61,35 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-default"
               aria-labelledby="navbarDropdownMenuLink-333">
-              <a class="dropdown-item" href="user/login.php">Login as User</a>
-              <a class="dropdown-item" href="ngo/login/php">Login as NGO</a>
+              <?php
+                if(!isset($_SESSION['email'])){
+                  echo "<a href='user/login.php' class='dropdown-item'>Login as User</a>";
+                  echo "<a href='ngo/login.php' class='dropdown-item'>Login as NGO</a>";
+                }else{
+                  $email = $_SESSION['email'];
+                  $sqluser = "SELECT * FROM step WHERE email = '$email'";
+                  $result = $db->query($sqluser);
+                  while ($row_user = mysqli_fetch_array($result)) {
+                    $step_email = $row_user['email'];
+                  }
+
+                  if($email == $step_email){
+                    echo "<a href='user/myaccount.php' class='dropdown-item'>My Account</a>";
+                    echo "<a href='user/logout.php' class='dropdown-item'>Logout</a>";
+                  }
+
+                  $sqlngo = "SELECT * FROM ngo WHERE email = '$email'";
+                  $result = $db->query($sqlngo);
+                  while ($row_ngo = mysqli_fetch_array($result)) {
+                    $ngo_email = $row_ngo['email'];
+                  }
+
+                  if($email == $ngo_email){
+                    echo "<a href='ngo/myaccount.php' class='dropdown-item'>My Account</a>";
+                    echo "<a href='ngo/logout.php' class='dropdown-item'>Logout</a>";
+                  }
+                }
+              ?>
             </div>
           </li>
         </ul>
@@ -67,3 +97,20 @@
     </nav>
     <!--/.Navbar -->
   </header>
+  <div id="about" class="view" style="height: 50%;background: url('img/women-empowerment-1.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 20em 2em">
+      <div class="mask rgba-black-strong">
+        <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-md-10">
+              <h4 class="white-text my-4 h1-responsive">Ministry of Women and Child Development</h4>
+              <hr class="hr-light">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
