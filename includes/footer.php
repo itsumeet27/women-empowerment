@@ -87,7 +87,7 @@
 
 	<!-- Copyright -->
 	<div class="footer-copyright text-center py-3">&copy; 2019 Copyright:
-	  	<a href="https://www.netmatesolutions.in/women-empowerment"> Women Empowerment</a> developed and maintained by <a href="https://www.lukaenterprises.com">Sumeet Sharma</a>
+	  	<a href="https://www.netmatesolutions.in/women-empowerment"> Women Empowerment</a> developed and maintained by <a href="https://www.github.com/270296">Sumeet Sharma</a>
 	</div>
 	<!-- Copyright -->
 </footer>
