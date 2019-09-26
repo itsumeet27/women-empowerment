@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/functions.php';?>
+<?php 
+  include 'includes/functions.php';
+  include '../core/init.php';
+?>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,8 +47,19 @@
               echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
             }
             else{
-              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
-              echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+              $email = $_SESSION['email'];
+              $sqluser = "SELECT * FROM step WHERE email = '$email'";
+              $result = $db->query($sqluser);
+              while ($row_user = mysqli_fetch_array($result)) {
+                $step_email = $row_user['email'];
+              }
+
+              if($email == $step_email){
+                echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+                echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+              }else{
+                echo "<script>window.open('','_self')</script>";
+              }              
             }
           ?>
         </ul>

@@ -47,8 +47,19 @@
               echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
             }
             else{
-              echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
-              echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+              $email = $_SESSION['email'];
+              $sqlngo = "SELECT * FROM ngo WHERE email = '$email'";
+              $result = $db->query($sqlngo);
+              while ($row_user = mysqli_fetch_array($result)) {
+                $ngo_email = $row_user['email'];
+              }
+
+              if($email == $ngo_email){
+                echo "<li class='nav-item'><a href='myaccount.php' class='nav-link' style='border-radius: 10em;'>My Account</a></li>";
+                echo "<li class='nav-item'><a href='logout.php' class='nav-link' style='border-radius: 10em;'>Logout</a></li>";
+              }else{
+                echo "<script>window.open('','_self')</script>";
+              }              
             }
           ?>
         </ul>
