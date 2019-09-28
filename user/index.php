@@ -23,7 +23,7 @@
           </a>
         </div>
         <div class="card">
-          <div class="card-body elegant-color white-text rounded-bottom">
+          <div class="card-body white-text rounded-bottom" style="background: #007ba8">
 
             <!-- Social shares button -->
             <a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a>
@@ -49,7 +49,7 @@
           </a>
         </div>
         <div class="card">
-          <div class="card-body elegant-color white-text rounded-bottom">
+          <div class="card-body white-text rounded-bottom" style="background: #007ba8">
 
             <!-- Social shares button -->
             <a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a>
@@ -75,7 +75,7 @@
           </a>
         </div>
         <div class="card">
-          <div class="card-body elegant-color white-text rounded-bottom">
+          <div class="card-body white-text rounded-bottom" style="background: #007ba8">
             <!-- Social shares button -->
             <a class="activator waves-effect mr-4"><i class="fas fa-share-alt white-text"></i></a>
             <!-- Title -->
