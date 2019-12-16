@@ -3,7 +3,7 @@
   include('includes/header.php');
 ?>
 
-<h2 class="text-center">STEP User Registration</h2>
+<h2 class="text-center">NGO Registration</h2>
 <div class="container-fluid p-2">
 	<div class="card">
 		<div class="card-header">
@@ -11,7 +11,7 @@
 		</div>
 		<div class="card-body">
 			<div class="container-fluid">
-				<form class="p-3 grey-text" method="post" action="register.php">
+				<form class="p-3 grey-text" method="post" action="email.php">
 					<div class="row">					
 						<div class="col-md-6">
 							<div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
@@ -88,7 +88,6 @@
 
 		$insertEmp = "INSERT INTO ngo (ip,ngo_name,ngo_description,organization_type,email,password,ngo_address,city,state,zipcode,phone,ngo_head) VALUES ('$ip','$ngo_name','$ngo_description','$organization_type','$email','$password','$ngo_address','$city','$state','$zipcode','$phone','$ngo_head')";
 		$db->query($insertEmp);
-
 		
 		if($db){
 			$_SESSION['email'] = $email;
