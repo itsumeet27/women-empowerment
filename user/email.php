@@ -17,7 +17,7 @@
 	
 	$from = "itsumeet@gmail.com";
 	$to = $email;
-	$subject = "New STEP Registration";
+	$subject = "Successful Registration";
 	$body = "Hello $firstname! Greetings for the day. Thank you for registering with us. You can view your dashboard and apply for the courses.";
 	$headers = "From: $from";
 

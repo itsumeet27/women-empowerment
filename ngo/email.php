@@ -18,7 +18,7 @@
 	
     $from = "itsumeet@gmail.com";
 	$to = $email;
-	$subject = "New NGO Registration";
+	$subject = "Successful Registration";
 	$body = "Hello $ngo_name! Greetings for the day. Thank you for registering with us. You can view your dashboard and upload the courses for training purpose.";
 	$headers = "From: $from";
 
