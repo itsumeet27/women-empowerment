@@ -12,7 +12,7 @@
 		</div>
 		<div class="card-body">
 			<div class="container-fluid">
-				<form class="p-3 grey-text" method="post" action="register.php">
+				<form class="p-3 grey-text" method="post" action="email.php">
 					<div class="row">					
 						<div class="col-md-6">
 							<div class="md-form form-sm"> <i class="fa fa-user prefix"></i>
